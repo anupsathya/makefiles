@@ -5,7 +5,7 @@
 .PHONY: all
 all: install
 
-# Install target
+# Installation
 .PHONY: install
 install:
 	@echo "This tool requires homebrew. Make sure you have homebrew installed."
@@ -17,6 +17,7 @@ install:
 	@brew install latexdiff
 	@echo "Installation completed."
 
+# Generating the diff file
 .PHONY: diff
 diff:
 	cd original && perl latexpand original.tex > original-temp.tex;
@@ -25,6 +26,7 @@ diff:
 	cd revised && latexdiff original-temp.tex revised-temp.tex > changes-marked.tex;
 	cp revised/changes-marked.tex changes-marked.tex;
 
+# Cleaning up temporary files
 .PHONY: clean
 clean:
 	rm original/original-temp.tex;
