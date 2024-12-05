@@ -3,7 +3,7 @@
 
 # Default target
 .PHONY: all
-all: install
+all: install diff clean
 
 # Installation
 .PHONY: install
