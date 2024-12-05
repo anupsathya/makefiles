@@ -1,4 +1,10 @@
-Required folder structure
+# Generating a .tex File with All Changes Marked
+
+Follow the steps below to generate a `.tex` file that highlights all changes between the original and revised versions of your document:
+
+### Folder Structure
+
+Ensure your directory follows this structure:
 
 ```
 <parent-folder>
@@ -8,19 +14,40 @@ Required folder structure
 │   ├── original.tex
 │   └── sections
 └── revised
-	├── figures
-	├── revised.tex
-	└── sections
+    ├── figures
+    ├── revised.tex
+    └── sections
 ```
 
-# Generating a .tex file with all the changes marked
+### Steps to Generate `changes-marked.tex`
 
-Here are the steps to make this work: 
+1. **Download Sources:**
+   - Download the **original source** from PCS and place it in the `original` directory.
+   - Download the **revised source** from Overleaf and place it in the `revised` directory.
 
-1. Download the original source from PCS. 
-2. Download the revised source from Overleaf. 
-3. Download the Makefile from this directory and make sure the folder structure matches the above folder structure. 
-4. Make sure you have homebrew installed. If not, follow the instructions [here](https://docs.brew.sh/Installation).
-5. Run `make` on your terminal from the parent folder.
-6. If everything went well, you should have a new file in your folder named `changes-marked.tex`. 
-7. Upload this file to the root folder on your Overleaf project and compile. It should generate a changes marked PDF in the ACM format.
+2. **Obtain the Makefile:**
+   - Download the `Makefile` from this directory and place it in the root of the `<parent-folder>`.
+
+3. **Install Homebrew (if not already installed):**
+   - Follow the installation instructions provided [here](https://docs.brew.sh/Installation).
+
+4. **Run the Command:**
+   - Navigate to the `<parent-folder>` in your terminal.
+   - Run the following command:
+     ```
+     make
+     ```
+
+5. **Check Output:**
+   - If everything runs successfully, a new file named `changes-marked.tex` will be created in the `<parent-folder>`.
+
+6. **Upload and Compile on Overleaf:**
+   - Upload the `changes-marked.tex` file to the root folder of your Overleaf project.
+   - Compile the project to generate a PDF in the ACM format with all changes marked.
+
+---
+
+### Additional Notes
+
+- Verify the file paths and folder structure match the instructions before running `make`.
+- If you encounter issues during the process, check for errors in the terminal output and confirm all dependencies are installed.
