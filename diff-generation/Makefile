@@ -1,3 +1,6 @@
+# Author: Anup Sathya
+# Created: 12-05-2024
+
 # Default target
 .PHONY: all
 all: install
