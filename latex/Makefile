@@ -2,6 +2,11 @@ TEX_FILES := $(shell find . -name '*.tex')
 IMAGE_DIR := images
 IMAGE_FILES := $(shell find $(IMAGE_DIR) -type f \( -name '*.pdf' -o -name '*.png' -o -name '*.jpg' \))
 
+all: pdf tidy
+
+pdf: 
+	latexmk -pdf -bibtex main
+
 tidy:
 	rm -f *.dvi *.aux *.log *.blg *.bbl *.fdb_latexmk *.fls *.out *.synctex.gz *.cut
 
