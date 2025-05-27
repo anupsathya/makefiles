@@ -15,3 +15,11 @@ clean-images:
 			rm $$img; \
 		fi \
 	done
+
+acm:
+	rm -f *.bbx *.bst *.png *.pdf *.bib *.cbx *.cls *.dbx *.txt
+	cp sample-sigconf-authordraft.tex main.tex
+	rm -f sample-*
+	touch references.bib
+	mkdir figures
+	mkdir sections
